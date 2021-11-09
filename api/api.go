@@ -17,6 +17,7 @@ func InitWebApiEndpoint(e *echo.Echo) {
 
 func applyWebApiV1Endpoint(e *echo.Echo, apiPrefix string) {
 	api := e.Group(fmt.Sprintf("%s/v1", apiPrefix))
+
 	test := api.Group("/test")
 	test.GET("/in", v1.GetMockEndpoint)
 
